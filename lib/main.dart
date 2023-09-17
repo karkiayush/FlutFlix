@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:movie_recommendation_app/utils/text.dart';
+import 'package:movie_recommendation_app/utils/top_rated_movies.dart';
+import 'package:movie_recommendation_app/utils/upcoming_movies.dart';
 import 'package:movie_recommendation_app/widgets/trending_movies.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
@@ -79,7 +81,7 @@ class _HomeState extends State<Home> {
       upcomingMovies = upcomingResult['results'];
     });
 
-    print(trendingMovies);
+    // print(trendingMovies);
     // print("\n");
     // print("\n");
     // print(topRatedResult);
@@ -120,6 +122,8 @@ class _HomeState extends State<Home> {
       body: ListView(
         children: [
           TrendingMovies(trending: trendingMovies),
+          TopRatedMovies(toprated: topRatedMovies),
+          UpComingMovies(upcoming: upcomingMovies),
         ],
       ),
     );

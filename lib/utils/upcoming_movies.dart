@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:movie_recommendation_app/utils/text.dart';
 
-class TrendingMovies extends StatelessWidget {
-  final List trending;
+class UpComingMovies extends StatelessWidget {
+  final List upcoming;
 
-  const TrendingMovies({super.key, required this.trending});
+  const UpComingMovies({super.key, required this.upcoming});
 
   @override
   Widget build(BuildContext context) {
@@ -18,17 +18,17 @@ class TrendingMovies extends StatelessWidget {
       decoration: BoxDecoration(color: Colors.transparent),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         ModifiedText(
-          text: "Trending Movies",
+          text: "UPComing Movies",
           size: 25,
           color: Colors.white,
           weight: FontWeight.normal,
         ),
         Container(
           margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-          height: 275,
+          height: 270,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: trending.length,
+              itemCount: upcoming.length,
               itemBuilder: (context, index) {
                 /*returning inkwell since when we click on the banner page, we wanna redirect to the description page*/
 
@@ -44,19 +44,16 @@ class TrendingMovies extends StatelessWidget {
                             image: DecorationImage(
                               image: NetworkImage(
                                 'https://image.tmdb.org/t/p/w500' +
-                                    trending[index]['poster_path'],
+                                    upcoming[index]['poster_path'],
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 5,
-                        ),
                         Container(
                           height: 70,
                           child: ModifiedText(
-                            text: trending[index]['title'] != null
-                                ? trending[index]['title']
+                            text: upcoming[index]['title'] != null
+                                ? upcoming[index]['title']
                                 : "Loading.....",
                             size: 15,
                             color: Colors.white,
