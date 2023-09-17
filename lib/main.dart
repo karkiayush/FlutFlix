@@ -85,7 +85,11 @@ class _HomeState extends State<Home> {
     // print(trendingMovies);
     // print("\n");
     // print("\n");
-    print(topRatedResult);
+    /// The line `// print(topRatedResult);` is commented out, which means it is not being executed. It
+    /// is a debugging statement that would print the value of the `topRatedResult` variable to the
+    /// console. It is likely used to check the data returned from the API and verify that it is being
+    /// fetched correctly.
+    // print(topRatedResult);
     // print("\n");
     // print("\n");
     // print(popularTvShows);
