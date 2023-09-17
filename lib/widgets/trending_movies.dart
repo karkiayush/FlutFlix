@@ -35,6 +35,7 @@ class TrendingMovies extends StatelessWidget {
                 return InkWell(
                   onTap: () {},
                   child: Container(
+                    margin: EdgeInsets.only(right: 10),
                     width: 140,
                     child: Column(
                       children: [
@@ -53,6 +54,7 @@ class TrendingMovies extends StatelessWidget {
                           height: 5,
                         ),
                         Container(
+                          padding: const EdgeInsets.only(left: 8, right: 8),
                           height: 70,
                           child: ModifiedText(
                             text: trending[index]['title'] != null

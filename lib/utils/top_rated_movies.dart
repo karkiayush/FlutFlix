@@ -35,6 +35,7 @@ class TopRatedMovies extends StatelessWidget {
                 return InkWell(
                   onTap: () {},
                   child: Container(
+                    margin: EdgeInsets.only(right: 10),
                     width: 140,
                     child: Column(
                       children: [
@@ -51,13 +52,16 @@ class TopRatedMovies extends StatelessWidget {
                         ),
                         Container(
                           height: 70,
-                          child: ModifiedText(
-                            text: toprated[index]['title'] != null
-                                ? toprated[index]['title']
-                                : "Loading.....",
-                            size: 15,
-                            color: Colors.white,
-                            weight: FontWeight.normal,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 8, right: 8),
+                            child: ModifiedText(
+                              text: toprated[index]['title'] != null
+                                  ? toprated[index]['title']
+                                  : "Loading.....",
+                              size: 15,
+                              color: Colors.white,
+                              weight: FontWeight.normal,
+                            ),
                           ),
                         )
                       ],

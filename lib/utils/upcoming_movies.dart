@@ -35,6 +35,7 @@ class UpComingMovies extends StatelessWidget {
                 return InkWell(
                   onTap: () {},
                   child: Container(
+                    margin: EdgeInsets.only(right: 10),
                     width: 140,
                     child: Column(
                       children: [
@@ -51,6 +52,7 @@ class UpComingMovies extends StatelessWidget {
                         ),
                         Container(
                           height: 70,
+                          padding: const EdgeInsets.only(left: 8, right: 8),
                           child: ModifiedText(
                             text: upcoming[index]['title'] != null
                                 ? upcoming[index]['title']
