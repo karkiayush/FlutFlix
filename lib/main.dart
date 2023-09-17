@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'worksans',
         brightness: Brightness.dark,
-        primaryColor: Color.fromARGB(255, 78, 183, 142),
+        primaryColor: Colors.black,
       ),
       home: Home(),
     );
@@ -103,9 +103,9 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavbarDrawer(),
-      backgroundColor: Colors.black,
+      backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Theme.of(context).primaryColor,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
