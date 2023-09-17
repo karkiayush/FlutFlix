@@ -85,10 +85,10 @@ class _HomeState extends State<Home> {
     // print(trendingMovies);
     // print("\n");
     // print("\n");
-    // print(topRatedResult);
+    print(topRatedResult);
     // print("\n");
     // print("\n");
-    print(popularTvShows);
+    // print(popularTvShows);
     // print("\n");
     // print("\n");
     // print(upcomingMovies);

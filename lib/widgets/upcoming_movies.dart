@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:movie_recommendation_app/utils/text.dart';
+import 'package:movie_recommendation_app/description_screen.dart';
 
 class UpComingMovies extends StatelessWidget {
   final List upcoming;
@@ -33,7 +34,23 @@ class UpComingMovies extends StatelessWidget {
                 /*returning inkwell since when we click on the banner page, we wanna redirect to the description page*/
 
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DescriptionScreen(
+                          name: upcoming[index]['original_title'],
+                          description: upcoming[index]['overview'],
+                          vote: upcoming[index]['vote_average'].toString(),
+                          launchDate: upcoming[index]['release_date'],
+                          bannerUrl: 'https://image.tmdb.org/t/p/w500' +
+                              upcoming[index]['backdrop_path'],
+                          posterUrl: 'https://image.tmdb.org/t/p/w500' +
+                              upcoming[index]['poster_path'],
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     margin: EdgeInsets.only(right: 10),
                     width: 140,

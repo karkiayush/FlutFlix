@@ -39,12 +39,14 @@ class TopRatedMovies extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DescriptionScreen(
-                          name: toprated[index]['title'],
-                          description: toprated[index]['title'],
-                          vote: toprated[index]['title'],
-                          launchDate: toprated[index]['title'],
-                          bannerUrl: toprated[index]['title'],
-                          posterUrl: toprated[index]['title'],
+                          name: toprated[index]['original_title'],
+                          description: toprated[index]['overview'],
+                          vote: toprated[index]['vote_average'].toString(),
+                          launchDate: toprated[index]['release_date'],
+                          bannerUrl: 'https://image.tmdb.org/t/p/w500' +
+                              toprated[index]['backdrop_path'],
+                          posterUrl: 'https://image.tmdb.org/t/p/w500' +
+                              toprated[index]['poster_path'],
                         ),
                       ),
                     );
