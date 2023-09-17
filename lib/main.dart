@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_local_variable, avoid_print, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:movie_recommendation_app/utils/navbar_drawer.dart';
 import 'package:movie_recommendation_app/utils/text.dart';
 import 'package:movie_recommendation_app/widgets/top_rated_movies.dart';
 import 'package:movie_recommendation_app/widgets/tv_shows.dart';
@@ -101,6 +102,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavbarDrawer(),
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
