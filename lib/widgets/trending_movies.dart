@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, prefer_interpolation_to_compose_strings, prefer_if_null_operators
 
 import 'package:flutter/material.dart';
+import 'package:movie_recommendation_app/description_screen.dart';
 import 'package:movie_recommendation_app/utils/text.dart';
 
 class TrendingMovies extends StatelessWidget {
@@ -33,41 +34,59 @@ class TrendingMovies extends StatelessWidget {
                 /*returning inkwell since when we click on the banner page, we wanna redirect to the description page*/
 
                 return InkWell(
-                  onTap: () {},
-                  child: Container(
-                    margin: EdgeInsets.only(right: 10),
-                    width: 140,
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 200,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                'https://image.tmdb.org/t/p/w500' +
-                                    trending[index]['poster_path'],
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DescriptionScreen(
+                            name: trending[index]['title'],
+                            description: trending[index]['overview'],
+                            vote: trending[index]['vote_average'].toString(),
+                            launchDate: trending[index]['release_date'],
+                            bannerUrl: 'https://image.tmdb.org/t/p/w500' +
+                                trending[index]['backdrop_path'],
+                            posterUrl: 'https://image.tmdb.org/t/p/w500' +
+                                trending[index]['poster_path']),
+                      ),
+                    );
+                  },
+                  child: trending[index]['title'] != null
+                      ? Container(
+                          margin: EdgeInsets.only(right: 10),
+                          width: 140,
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 200,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: NetworkImage(
+                                      'https://image.tmdb.org/t/p/w500' +
+                                          trending[index]['poster_path'],
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Container(
-                          padding: const EdgeInsets.only(left: 8, right: 8),
-                          height: 70,
-                          child: ModifiedText(
-                            text: trending[index]['title'] != null
-                                ? trending[index]['title']
-                                : "Loading.....",
-                            size: 15,
-                            color: Colors.white,
-                            weight: FontWeight.normal,
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Container(
+                                padding:
+                                    const EdgeInsets.only(left: 8, right: 8),
+                                height: 70,
+                                child: ModifiedText(
+                                  text: trending[index]['title'] != null
+                                      ? trending[index]['title']
+                                      : "Loading.....",
+                                  size: 15,
+                                  color: Colors.white,
+                                  weight: FontWeight.normal,
+                                ),
+                              )
+                            ],
                           ),
                         )
-                      ],
-                    ),
-                  ),
+                      : Container(),
                 );
               }),
         ),
