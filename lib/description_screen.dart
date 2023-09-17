@@ -43,6 +43,15 @@ class DescriptionScreen extends StatelessWidget {
                       ),
                     ),
                     Positioned(
+                        left: 10,
+                        bottom: 60,
+                        child: ModifiedText(
+                          text: 'Average Rating ⭐: ' + vote,
+                          color: Colors.white,
+                          size: 15,
+                          weight: FontWeight.normal,
+                        )),
+                    Positioned(
                         bottom: 1,
                         left: 4,
                         child: Row(
@@ -53,8 +62,8 @@ class DescriptionScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(20)),
                               padding: EdgeInsets.all(10),
                               child: ModifiedText(
-                                text: "Average Rating ⭐: " + vote,
-                                size: 18,
+                                text: "Release date 🗓️: " + launchDate,
+                                size: 14,
                                 weight: FontWeight.bold,
                                 color: Colors.white,
                               ),

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:movie_recommendation_app/utils/text.dart';
+import 'package:movie_recommendation_app/description_screen.dart';
 
 class TvShows extends StatelessWidget {
   final List tvshow;
@@ -33,7 +34,23 @@ class TvShows extends StatelessWidget {
                 /*returning inkwell since when we click on the banner page, we wanna redirect to the description page*/
 
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DescriptionScreen(
+                          name: tvshow[index]['original_name'],
+                          description: tvshow[index]['overview'],
+                          vote: tvshow[index]['vote_count'].toString(),
+                          launchDate: tvshow[index]['first_air_date'],
+                          bannerUrl: 'https://image.tmdb.org/t/p/w500' +
+                              tvshow[index]['backdrop_path'],
+                          posterUrl: 'https://image.tmdb.org/t/p/w500' +
+                              tvshow[index]['poster_path'],
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     margin: EdgeInsets.fromLTRB(0, 0, 10, 0),
                     width: 270,

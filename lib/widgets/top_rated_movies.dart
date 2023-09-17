@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:movie_recommendation_app/utils/text.dart';
+import 'package:movie_recommendation_app/description_screen.dart';
 
 class TopRatedMovies extends StatelessWidget {
   final List toprated;
@@ -33,7 +34,21 @@ class TopRatedMovies extends StatelessWidget {
                 /*returning inkwell since when we click on the banner page, we wanna redirect to the description page*/
 
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DescriptionScreen(
+                          name: toprated[index]['title'],
+                          description: toprated[index]['title'],
+                          vote: toprated[index]['title'],
+                          launchDate: toprated[index]['title'],
+                          bannerUrl: toprated[index]['title'],
+                          posterUrl: toprated[index]['title'],
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     margin: EdgeInsets.only(right: 10),
                     width: 140,

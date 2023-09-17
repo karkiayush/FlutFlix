@@ -82,13 +82,13 @@ class _HomeState extends State<Home> {
       upcomingMovies = upcomingResult['results'];
     });
 
-    print(trendingMovies);
+    // print(trendingMovies);
     // print("\n");
     // print("\n");
     // print(topRatedResult);
     // print("\n");
     // print("\n");
-    // print(popularTvShows);
+    print(popularTvShows);
     // print("\n");
     // print("\n");
     // print(upcomingMovies);
