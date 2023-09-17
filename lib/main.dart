@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:movie_recommendation_app/utils/text.dart';
-import 'package:movie_recommendation_app/utils/top_rated_movies.dart';
-import 'package:movie_recommendation_app/utils/tv_shows.dart';
-import 'package:movie_recommendation_app/utils/upcoming_movies.dart';
+import 'package:movie_recommendation_app/widgets/top_rated_movies.dart';
+import 'package:movie_recommendation_app/widgets/tv_shows.dart';
+import 'package:movie_recommendation_app/widgets/upcoming_movies.dart';
 import 'package:movie_recommendation_app/widgets/trending_movies.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
